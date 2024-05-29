@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: #DAA520; /* Couleur dorée métallique */
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.social-link {
+    color: #DAA520; /* Couleur dorée métallique */
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: goldenrod; /* Couleur goldenrod au survol */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.video-wrapper {
+    width: 80%; /* Ajustez la taille selon vos besoins */
+    max-width: 800px; /* Limite la taille maximale */
+    margin-bottom: 20px;
+    margin-top: 2cm; /* Ajoutez cette ligne pour abaisser la vidéo de 2 cm */
+}
+
+.logo-video {
+    width: 100%;
+    height: auto;
+}
+
+.image-wrapper {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.image-logo {
+    width: 150px; /* Ajustez cette taille selon vos besoins */
+    height: auto;
+}
+
+.content {
+    text-align: center; /* Centre le texte */
+    max-width: 600px;
+    margin-top: -2cm; /* Remonte le texte de 2 cm */
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #DAA520; /* Couleur dorée métallique */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet de texte pour un look métallique */
+    white-space: nowrap; /* Assure que le texte reste sur une seule ligne */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offset-right {
+    margin-right: 4mm; /* Décale "PRÉCOMMANDEZ VOTRE" de 0,5 cm vers la droite */
+}
+
+.crown-left {
+    width: 40px; /* Ajustez la taille de la couronne selon vos besoins */
+    height: auto;
+    margin-left: -2mm; /* Décale la couronne de 2 millimètres vers la gauche */
+    margin-right: 5px; /* Ajoute un espace à droite de la couronne */
+    filter: sepia(1) saturate(5) hue-rotate(15deg); /* Effet or métallique */
+    position: relative;
+    top: -2px; /* Monte la couronne de 5 pixels */
+}
+
+.crown-right {
+    width: 40px; /* Ajustez la taille de la couronne selon vos besoins */
+    height: auto;
+    margin-left: 5px; /* Ajoute un espace à gauche de la couronne */
+    filter: sepia(1) saturate(5) hue-rotate(15deg); /* Effet or métallique */
+    position: relative;
+    top: -2px; /* Monte la couronne de 5 pixels */
+}
+
+.crown-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.description {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #DAA520; /* Couleur dorée métallique */
+    text-align: center; /* Centre le texte */
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 700px; /* Augmente la taille maximale à 700px */
+    margin-bottom: 10px;
+    text-align: center; /* Centre le texte dans le champ de saisie */
+}
+
+.email-description {
+    font-size: 1em;
+    color: #DAA520;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.glasses-image {
+    margin-top: 20px; /* Ajoutez un peu d'espace au-dessus de l'image */
+    width: 80%;
+    max-width: 800px; /* Limite la taille maximale de l'image */
+    height: auto;
+}

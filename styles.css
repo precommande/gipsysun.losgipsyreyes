@@ -10,11 +10,10 @@ body {
 
 footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* Centre le lien social sur les petits écrans */
     padding: 20px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    position: relative; /* Change de positionnement pour les petits écrans */
+    bottom: 0; /* Change de positionnement pour les petits écrans */
 }
 
 .social-link {
@@ -41,7 +40,7 @@ footer {
 }
 
 .video-wrapper {
-    width: 80%; /* Ajustez la taille selon vos besoins */
+    width: 100%; /* Ajustez la taille selon vos besoins */
     max-width: 800px; /* Limite la taille maximale */
     margin-bottom: 20px;
     margin-top: 2cm; /* Ajoutez cette ligne pour abaisser la vidéo de 2 cm */
@@ -70,41 +69,30 @@ footer {
 }
 
 .main-title {
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 20px;
     color: #DAA520; /* Couleur dorée métallique */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Effet de texte pour un look métallique */
-    white-space: nowrap; /* Assure que le texte reste sur une seule ligne */
     display: flex;
+    flex-direction: column; /* Passe à une direction colonne pour les petits écrans */
     align-items: center;
     justify-content: center;
 }
 
 .offset-right {
-    margin-right: 4mm; /* Décale "PRÉCOMMANDEZ VOTRE" de 0,5 cm vers la droite */
+    margin-right: 0; /* Supprime le décalage pour les petits écrans */
 }
 
-.crown-left {
-    width: 40px; /* Ajustez la taille de la couronne selon vos besoins */
-    height: auto;
-    margin-left: -2mm; /* Décale la couronne de 2 millimètres vers la gauche */
-    margin-right: 5px; /* Ajoute un espace à droite de la couronne */
-    filter: sepia(1) saturate(5) hue-rotate(15deg); /* Effet or métallique */
-    position: relative;
-    top: -2px; /* Monte la couronne de 5 pixels */
-}
-
+.crown-left,
 .crown-right {
-    width: 40px; /* Ajustez la taille de la couronne selon vos besoins */
+    width: 30px; /* Réduit la taille de la couronne pour les petits écrans */
     height: auto;
-    margin-left: 5px; /* Ajoute un espace à gauche de la couronne */
+    margin: 0 5px; /* Ajoute un espace à gauche et à droite des couronnes */
     filter: sepia(1) saturate(5) hue-rotate(15deg); /* Effet or métallique */
-    position: relative;
-    top: -2px; /* Monte la couronne de 5 pixels */
 }
 
 .crown-container {
-    display: inline-flex;
+    display: flex;
     align-items: center;
 }
 
@@ -119,6 +107,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Ajoutez un espace au-dessus du formulaire */
 }
 
 input[type="email"] {
@@ -127,7 +116,7 @@ input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    max-width: 700px; /* Augmente la taille maximale à 700px */
+    max-width: 100%; /* Ajustez la taille pour les petits écrans */
     margin-bottom: 10px;
     text-align: center; /* Centre le texte dans le champ de saisie */
 }
@@ -154,7 +143,36 @@ button:hover {
 
 .glasses-image {
     margin-top: 20px; /* Ajoutez un peu d'espace au-dessus de l'image */
-    width: 80%;
+    width: 100%; /* Ajustez la taille pour les petits écrans */
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.5em; /* Réduit la taille de la police pour les petits écrans */
+    }
+
+    .crown-left,
+    .crown-right {
+        width: 25px; /* Réduit encore la taille des couronnes pour les très petits écrans */
+    }
+
+    .description {
+        font-size: 1em; /* Réduit la taille de la police pour les petits écrans */
+    }
+
+    .glasses-image {
+        width: 100%; /* Assure que l'image des lunettes prend toute la largeur */
+    }
+
+    .footer {
+        position: relative; /* Change de positionnement pour les petits écrans */
+        bottom: 0; /* Change de positionnement pour les petits écrans */
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centre le lien social sur les petits écrans */
+        padding: 10px;
+    }
 }

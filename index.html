@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="video-container">
-            <video id="logo-video" class="logo-video" autoplay muted loop>
+            <video id="logo-video" class="logo-video" autoplay loop>
                 <source src="Logo.mp4" type="video/mp4">
                 <source src="Logo.webm" type="video/webm">
                 <source src="Logo.ogv" type="video/ogg">
@@ -19,7 +19,7 @@
             <img src="Logo_with_black_background.png" alt="Logo" class="overlay-logo">
         </div>
         <div class="content">
-            <h1 class="main-title">
+            <h1 class="main-title">  </br>
                 <span class="offset-right">PRÉCOMMANDEZ VOTRE</span> 
                 <span class="crown-container">
                     <img src="Couronne.png" alt="Couronne" class="crown-left"> 
@@ -37,8 +37,7 @@
             <img src="Lunettes.png" alt="Lunettes GIPSY SUN" class="glasses-image">
             <br> <!-- Saut de ligne sous l'image -->
             <form action="/send-email" method="post" class="email-form">
-                <input type="email" name="email" placeholder="Entrez votre adresse e-mail" required>
-                <p class="email-description">et soyez avertis de la disponibilité des GIPSY SUN</p>
+                <input type="email" name="email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN" required>
                 <button type="submit">Soumettre</button>
             </form>
         </div>
@@ -49,7 +48,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("logo-video");
-            video.muted = true; // Assurez-vous que la vidéo est en sourdine pour permettre l'autoplay
+            video.muted = false; // Assurez-vous que la vidéo n'est pas sourdine pour permettre l'autoplay
 
             video.addEventListener("timeupdate", function() {
                 if (video.currentTime >= 30) {

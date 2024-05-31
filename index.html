@@ -9,11 +9,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="video-wrapper">
+        <div class="video-container">
             <video class="logo-video" autoplay muted loop>
                 <source src="Logo.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas les vidéos HTML5.
             </video>
+            <img src="Logo_with_black_background.png" alt="Logo" class="overlay-logo">
         </div>
         <div class="content">
             <h1 class="main-title">
@@ -33,20 +34,15 @@
             </p>
             <img src="Lunettes.png" alt="Lunettes GIPSY SUN" class="glasses-image">
             <br> <!-- Saut de ligne sous l'image -->
-	<br>
-	<br>
-            <form action="mailto:gipsysun.losgipsyreyes@gmail.com" method="post" enctype="text/plain" class="email-form">
-                <input type="email" name="email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN" required>
-                <p class="email-description"></p>
+            <form action="/send-email" method="post" class="email-form">
+                <input type="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+                <p class="email-description">et soyez avertis de la disponibilité des GIPSY SUN</p>
                 <button type="submit">Soumettre</button>
             </form>
         </div>
         <footer>
             <a href="https://www.instagram.com/losgipsyreyes" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
         </footer>
-        <div class="image-wrapper">
-            <img src="Logo_with_black_background.png" alt="Logo" class="image-logo">
-        </div>
     </div>
 </body>
 </html>

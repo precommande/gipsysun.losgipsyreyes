@@ -29,7 +29,7 @@
 <body>
     <div class="container">
         <div class="video-container">
-            <video id="logo-video" class="logo-video" autoplay loop>
+            <video id="logo-video" class="logo-video" autoplay muted loop>
                 <source src="Logo.mp4" type="video/mp4">
                 <source src="Logo.webm" type="video/webm">
                 <source src="Logo.ogv" type="video/ogg">
@@ -64,50 +64,54 @@
             <a href="https://www.instagram.com/losgipsyreyes" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
         </footer>
     </div>
+    <audio id="background-audio" autoplay loop>
+        <source src="Gipsy_Kings_Viento_Del_Arena_segment.mp3" type="audio/mp3">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            var video = document.getElementById("logo-video");
+            var audio = document.getElementById("logo-video");
             var fadeDuration = 3; // Durée du fondu en secondes
             var fadeInInterval, fadeOutInterval;
 
-            function fadeIn(video) {
+            function fadeIn(audio) {
                 var volume = 0;
-                video.volume = volume;
-                video.muted = false;
+                audio.volume = volume;
+                audio.muted = false;
                 fadeInInterval = setInterval(function() {
                     if (volume < 1) {
                         volume += 0.05;
-                        video.volume = volume;
+                        audio.volume = volume;
                     } else {
                         clearInterval(fadeInInterval);
                     }
                 }, fadeDuration * 10);
             }
 
-            function fadeOut(video) {
+            function fadeOut(audio) {
                 var volume = 1;
                 fadeOutInterval = setInterval(function() {
                     if (volume > 0) {
                         volume -= 0.01;
-                        video.volume = volume;
+                        audio.volume = volume;
                     } else {
                         clearInterval(fadeOutInterval);
-                        video.muted = false;
+                        video.muted = true;
                     }
                 }, fadeDuration * 10);
             }
 
-            video.addEventListener("play", function() {
+            audio.addEventListener("play", function() {
                 fadeIn(video);
             });
 
-            video.addEventListener("timeupdate", function() {
-                if (video.currentTime >= 25) { // Démarrer le fondu de sortie à 27 secondes
-                    fadeOut(video);
+            audio.addEventListener("timeupdate", function() {
+                if (audio.currentTime >= 25) { // Démarrer le fondu de sortie à 27 secondes
+                    fadeOut(audio);
                 }
                 if (video.currentTime >= 30) {
                     video.currentTime = 0;
-                    fadeIn(video); // Redémarrer le fondu d'entrée
+                    fadeIn(audio); // Redémarrer le fondu d'entrée
                 }
             });
 

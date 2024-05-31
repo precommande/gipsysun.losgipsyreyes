@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="video-container">
-            <video class="logo-video" autoplay loop controls>
+            <video id="logo-video" class="logo-video" autoplay loop controls>
                 <source src="Logo.mp4" type="video/mp4">
                 <source src="Logo.webm" type="video/webm">
                 <source src="Logo.ogv" type="video/ogg">
@@ -46,5 +46,17 @@
             <a href="https://www.instagram.com/losgipsyreyes" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
         </footer>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById("logo-video");
+            video.addEventListener("timeupdate", function() {
+                if (video.currentTime >= 30) {
+                    video.pause();
+                    video.currentTime = 0; // Remet à zéro pour rejouer si nécessaire
+                    video.play(); // Enlève cette ligne si vous ne souhaitez pas que la vidéo recommence automatiquement
+                }
+            });
+        });
+    </script>
 </body>
 </html>

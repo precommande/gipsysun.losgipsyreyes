@@ -56,7 +56,7 @@ footer {
     position: absolute;
     top: 10px; /* Ajustez cette valeur pour positionner l'image en haut */
     right: 10px; /* Ajustez cette valeur pour positionner l'image à droite */
-    width: 20%; /* Redimensionne à 20% de sa largeur originale */
+    width: 10%; /* Redimensionne à 20% de sa largeur originale */
     height: auto; /* Maintient le ratio d'aspect */
 }
 

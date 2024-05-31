@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="video-container">
-            <video id="logo-video" class="logo-video" autoplay loop>
+            <video id="logo-video" class="logo-video" autoplay muted loop>
                 <source src="Logo.mp4" type="video/mp4">
                 <source src="Logo.webm" type="video/webm">
                 <source src="Logo.ogv" type="video/ogg">
@@ -20,7 +20,7 @@
         </div>
         <div class="content">
             <h1 class="main-title">
-                <span class="offset-right">PRÉCOMMANDEZ VOTRE</span> 
+                <span class="offset-right">PRÉCOMMANDEZ VOTRE</span>
                 <span class="crown-container">
                     <img src="Couronne.png" alt="Couronne" class="crown-left"> 
                     GIPSY SUN 
@@ -37,7 +37,8 @@
             <img src="Lunettes.png" alt="Lunettes GIPSY SUN" class="glasses-image">
             <br> <!-- Saut de ligne sous l'image -->
             <form action="/send-email" method="post" class="email-form">
-                <input type="email" name="email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN<" required>
+                <input type="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+                <p class="email-description">et soyez avertis de la disponibilité des GIPSY SUN</p>
                 <button type="submit">Soumettre</button>
             </form>
         </div>
@@ -48,13 +49,15 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("logo-video");
+            video.muted = true; // Assurez-vous que la vidéo est en sourdine pour permettre l'autoplay
+
             video.addEventListener("timeupdate", function() {
                 if (video.currentTime >= 30) {
-                    video.pause();
-                    video.currentTime = 0; // Remet à zéro pour rejouer si nécessaire
-                    video.play(); // Enlève cette ligne si vous ne souhaitez pas que la vidéo recommence automatiquement
+                    video.currentTime = 0; // Remet à zéro pour rejouer
                 }
             });
+
+            video.play(); // Tente de jouer la vidéo
         });
     </script>
 </body>

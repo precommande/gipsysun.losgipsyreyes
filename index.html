@@ -113,6 +113,17 @@
                     startButton.style.display = 'none';
                 });
             });
+
+            var form = document.getElementById('email-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var email = document.getElementById('email').value;
+                var emailBody = document.getElementById('email-body');
+                emailBody.value = `Merci de me prévenir lorsque les GIPSY SUN seront disponibles. Mon adresse e-mail est : ${email}`;
+                
+                var mailtoLink = `mailto:gipsysun.losgipsyreyes@gmail.com?subject=Précommande GIPSY SUN&body=${encodeURIComponent(emailBody.value)}`;
+                window.location.href = mailtoLink;
+            });
         });
     </script>
 </body>

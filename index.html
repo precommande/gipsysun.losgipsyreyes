@@ -57,7 +57,7 @@
             <img src="Lunettes.png" alt="Lunettes GIPSY SUN" class="glasses-image">
             <br> <!-- Saut de ligne sous l'image -->
             <form action="mailto:gipsysun.losgipsyreyes@gmail.com" method="post" class="email-form">
-                <input type="email" name="email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN" required></br>
+                <input type="email" name="`Merci de me prévenir lorsque les GIPSY SUN seront disponibles. Mon adresse e-mail est : email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN" required></br>
                 <button type="submit">Soumettre</button>
             </form>
               </div>
@@ -112,17 +112,6 @@
                     fadeIn(audio);
                     startButton.style.display = 'none';
                 });
-            });
-
-            var form = document.getElementById('email-form');
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-                var email = document.getElementById('email').value;
-                var emailBody = document.getElementById('email-body');
-                emailBody.value = `Merci de me prévenir lorsque les GIPSY SUN seront disponibles. Mon adresse e-mail est : ${email}`;
-                
-                var mailtoLink = `mailto:gipsysun.losgipsyreyes@gmail.com?subject=Précommande GIPSY SUN&body=${encodeURIComponent(emailBody.value)}`;
-                window.location.href = mailtoLink;
             });
         });
     </script>

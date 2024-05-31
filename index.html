@@ -40,7 +40,7 @@
                 <input type="email" name="email" placeholder="Entrez votre adresse e-mail et soyez avertis de la disponibilité des GIPSY SUN" required>
                 <button type="submit">Soumettre</button>
             </form>
-        </div>
+              </div>
         <footer>
             <a href="https://www.instagram.com/losgipsyreyes" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
         </footer>
@@ -48,11 +48,47 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("logo-video");
-            video.muted = false; // Assurez-vous que la vidéo n'est pas sourdine pour permettre l'autoplay
+            var fadeDuration = 3; // Durée du fondu en secondes
+            var fadeInInterval, fadeOutInterval;
+
+            function fadeIn(video) {
+                var volume = 0;
+                video.volume = volume;
+                video.muted = false;
+                fadeInInterval = setInterval(function() {
+                    if (volume < 1) {
+                        volume += 0.01;
+                        video.volume = volume;
+                    } else {
+                        clearInterval(fadeInInterval);
+                    }
+                }, fadeDuration * 10);
+            }
+
+            function fadeOut(video) {
+                var volume = 1;
+                fadeOutInterval = setInterval(function() {
+                    if (volume > 0) {
+                        volume -= 0.01;
+                        video.volume = volume;
+                    } else {
+                        clearInterval(fadeOutInterval);
+                        video.muted = true;
+                    }
+                }, fadeDuration * 10);
+            }
+
+            video.addEventListener("play", function() {
+                fadeIn(video);
+            });
 
             video.addEventListener("timeupdate", function() {
+                if (video.currentTime >= 27) { // Démarrer le fondu de sortie à 27 secondes
+                    fadeOut(video);
+                }
                 if (video.currentTime >= 30) {
-                    video.currentTime = 0; // Remet à zéro pour rejouer
+                    video.currentTime = 0;
+                    fadeIn(video); // Redémarrer le fondu d'entrée
                 }
             });
 

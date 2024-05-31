@@ -57,7 +57,7 @@
                 video.muted = false;
                 fadeInInterval = setInterval(function() {
                     if (volume < 1) {
-                        volume += 0.01;
+                        volume += 0.05;
                         video.volume = volume;
                     } else {
                         clearInterval(fadeInInterval);
@@ -73,7 +73,7 @@
                         video.volume = volume;
                     } else {
                         clearInterval(fadeOutInterval);
-                        video.muted = true;
+                        video.muted = false;
                     }
                 }, fadeDuration * 10);
             }
@@ -83,7 +83,7 @@
             });
 
             video.addEventListener("timeupdate", function() {
-                if (video.currentTime >= 27) { // Démarrer le fondu de sortie à 27 secondes
+                if (video.currentTime >= 25) { // Démarrer le fondu de sortie à 27 secondes
                     fadeOut(video);
                 }
                 if (video.currentTime >= 30) {

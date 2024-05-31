@@ -10,10 +10,10 @@ body {
 
 footer {
     display: flex;
-    justify-content: center; /* Centre le lien social sur les petits écrans */
+    justify-content: center; /* Centre le lien social */
     padding: 20px;
-    position: relative; /* Change de positionnement pour les petits écrans */
-    bottom: 0; /* Change de positionnement pour les petits écrans */
+    position: relative; /* Pour un bon positionnement sur les petits écrans */
+    bottom: 0; /* Pour un bon positionnement sur les petits écrans */
 }
 
 .social-link {
@@ -102,9 +102,10 @@ footer {
 }
 
 .email-form {
-    display flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px; /* Ajoutez un espace au-dessus du formulaire */
 }
 
 input[type="email"] {
@@ -113,7 +114,7 @@ input[type="email"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 100%;
-    max-width: 700px; /* Augmente la taille maximale à 700px */
+    max-width: 100%; /* Ajustez la taille pour les petits écrans */
     margin-bottom: 10px;
     text-align: center; /* Centre le texte dans le champ de saisie */
 }
@@ -140,7 +141,36 @@ button:hover {
 
 .glasses-image {
     margin-top: 20px; /* Ajoutez un peu d'espace au-dessus de l'image */
-    width: 80%;
+    width: 100%; /* Ajustez la taille pour les petits écrans */
     max-width: 800px; /* Limite la taille maximale de l'image */
     height: auto;
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 1.5em; /* Réduit la taille de la police pour les petits écrans */
+    }
+
+    .crown-left,
+    .crown-right {
+        width: 25px; /* Réduit encore la taille des couronnes pour les très petits écrans */
+    }
+
+    .description {
+        font-size: 1em; /* Réduit la taille de la police pour les petits écrans */
+    }
+
+    .glasses-image {
+        width: 100%; /* Assure que l'image des lunettes prend toute la largeur */
+    }
+
+    footer {
+        position: relative; /* Change de positionnement pour les petits écrans */
+        bottom: 0; /* Change de positionnement pour les petits écrans */
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centre le lien social sur les petits écrans */
+        padding: 10px;
+    }
 }

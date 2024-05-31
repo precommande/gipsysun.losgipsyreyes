@@ -39,8 +39,9 @@ footer {
     text-align: center;
 }
 
-.video-wrapper {
-    width: 100%; /* Ajustez la taille selon vos besoins */
+.video-container {
+    position: relative;
+    width: 80%; /* Ajustez la taille selon vos besoins */
     max-width: 800px; /* Limite la taille maximale */
     margin-bottom: 20px;
     margin-top: 2cm; /* Ajoutez cette ligne pour abaisser la vidéo de 2 cm */
@@ -51,14 +52,11 @@ footer {
     height: auto;
 }
 
-.image-wrapper {
+.overlay-logo {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-
-.image-logo {
-    width: 150px; /* Ajustez cette taille selon vos besoins */
+    top: 10px; /* Ajustez cette valeur pour positionner l'image en haut */
+    right: 10px; /* Ajustez cette valeur pour positionner l'image à droite */
+    width: 100px; /* Ajustez la taille de l'image selon vos besoins */
     height: auto;
 }
 
@@ -167,7 +165,7 @@ button:hover {
         width: 100%; /* Assure que l'image des lunettes prend toute la largeur */
     }
 
-    .footer {
+    footer {
         position: relative; /* Change de positionnement pour les petits écrans */
         bottom: 0; /* Change de positionnement pour les petits écrans */
         width: 100%;

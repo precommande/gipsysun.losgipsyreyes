@@ -44,7 +44,7 @@ footer {
     width: 80%; /* Ajustez la taille selon vos besoins */
     max-width: 800px; /* Limite la taille maximale */
     margin-bottom: 20px;
-    margin-top: 2cm; /* Ajoutez cette ligne pour abaisser la vidéo de 2 cm */
+    margin-top: 0cm; /* Ajoutez cette ligne pour abaisser la vidéo de 2 cm */
 }
 
 .logo-video {

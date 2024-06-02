@@ -118,7 +118,17 @@
      <script>
         function changeInputName() {
             var emailInput = document.getElementById('email-input');
-            emailInput.name = "Merci_de_me_prévenir_lorsque_les_GIPSY_SUN_seront_disponibles._Mon_adresse_e-mail_est";
+            emailInput.name = "Merci de me prévenir lorsque les GIPSY SUN seront disponibles. Mon adresse e-mail est";
+        }
+    </script>
+    <script>
+        function setEmailAction() {
+            var emailInput = document.getElementById('email-input');
+            var emailValue = emailInput.value;
+            var subject = "Merci de me prévenir lorsque les GIPSY SUN seront disponibles";
+            var body = "Mon adresse e-mail est : " + emailValue;
+            var mailtoLink = "mailto:gipsysun.losgipsyreyes@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+            document.getElementById('email-form').action = mailtoLink;
         }
     </script>
 </body>

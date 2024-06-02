@@ -121,15 +121,20 @@
             emailInput.name = "Merci de me prévenir lorsque les GIPSY SUN seront disponibles. Mon adresse e-mail est";
         }
     </script> 
+    
     <script>
         function setEmailAction(event) {
             event.preventDefault(); // Empêche la soumission par défaut du formulaire
-            var emailInput = document.getElementById('email-input');
-            var emailValue = emailInput.value;
+            var emailInput = document.getElementById('email-input').value;
             var subject = "Merci de me prévenir lorsque les GIPSY SUN seront disponibles";
-            var body = "Mon adresse e-mail est : " + emailValue;
-            var mailtoLink = "mailto:gipsysun.losgipsyreyes@gmail.com?subject=" + encodeURIComponent(subject).replace(/%20/g, " ") + "&body=" + encodeURIComponent(body).replace(/%20/g, " ");
-            window.location.href = mailtoLink; // Redirige vers le lien mailto
+            var body = "Mon adresse e-mail est : " + emailInput;
+            
+            var mailtoLink = "mailto:gipsysun.losgipsyreyes@gmail.com?subject=" 
+                + encodeURIComponent(subject).replace(/%20/g, ' ') 
+                + "&body=" 
+                + encodeURIComponent(body).replace(/%20/g, ' ');
+            
+            window.location.href = mailtoLink;
         }
     </script>
 </body>
